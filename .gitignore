@@ -1,0 +1,43 @@
+# Compiled binaries
+*.out
+*.exe
+*.o
+*.obj
+*.so
+*.dll
+*.a
+
+# Debug files
+*.dSYM/
+*.stackdump
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE folders
+.vscode/
+.idea/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Input/Output test files (optional)
+input.txt
+output.txt
+test.txt
+
+# Logs
+*.log
+
+# CMake / build systems
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Misc
+*.class
