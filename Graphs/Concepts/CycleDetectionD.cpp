@@ -1,4 +1,6 @@
-// ############### Using BFS ###############
+// https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+
+// ############### Using DFS ###############
 bool hasCycleDFS(
     vector<vector<int>>& adj, 
     int node, vector<bool>& visited
@@ -15,6 +17,7 @@ bool hasCycleDFS(
     return false;
 }
 
+// ############### Using BFS ###############
 bool hasCycleBFS(
     vector<vector<int>>& adj, 
     int node, vector<bool>& visited
