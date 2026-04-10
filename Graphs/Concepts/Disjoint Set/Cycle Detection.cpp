@@ -1,3 +1,5 @@
+// https://www.geeksforgeeks.org/problems/detect-cycle-using-dsu/1
+
 class Solution {
   public:
     vector<int> rank;
