@@ -1,0 +1,49 @@
+### DP vs Graph Traversal (BFS/DFS)
+
+#### Mostly DP when:
+
+1. States can be computed in a fixed order.
+2. Current state depends only on already solved states.
+3. No cyclic dependency between states.
+4. Problem asks:
+
+   * count ways
+   * maximize/minimize value
+   * possible or not possible
+5. Same subproblems repeat.
+6. Transition count per state is usually limited/predictable.
+7. States look like:
+
+   * `dp[i]`
+   * `dp[i][j]`
+   * prefix/suffix dependency.
+
+---
+
+#### Mostly Graph Traversal when:
+
+1. Problem can naturally become:
+
+   * nodes
+   * edges
+   * transitions.
+2. From one state you can move to many arbitrary states.
+3. There is no clear order to fill states.
+4. Cycles are naturally present.
+5. Problem asks:
+
+   * shortest path
+   * minimum jumps
+   * reachability
+   * connected components.
+6. States can revisit each other.
+7. Current state may depend on future/random states.
+
+---
+
+#### Strong BFS hints:
+
+1. Minimum steps/moves/jumps/operations.
+2. Unweighted transitions.
+3. “Reach destination in minimum moves.”
+4. Level-by-level exploration fits naturally.

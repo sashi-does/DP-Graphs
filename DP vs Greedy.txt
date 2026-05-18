@@ -1,0 +1,38 @@
+### DP vs Greedy
+
+#### Mostly DP when:
+
+1. Local optimal choice may fail globally.
+2. Need to explore multiple choices.
+3. Future decisions depend on current choice.
+4. Problem has overlapping subproblems.
+5. You feel:
+
+   * “I cannot commit greedily.”
+6. Requires remembering past computed states.
+
+---
+
+#### Mostly Greedy when:
+
+1. Best local choice always stays optimal globally.
+2. Once chosen, decision is never regretted.
+3. Problem has:
+
+   * sorting
+   * intervals
+   * monotonic behavior.
+4. You can prove:
+
+   * “choosing bigger/smaller now is always safe.”
+5. No need to revisit previous decisions.
+6. State memory usually unnecessary.
+
+---
+
+### One-line intuition
+
+* Reusable optimal subproblems → DP
+* Nodes + edges + traversal → Graph
+* Minimum moves in unweighted graph → BFS
+* Local optimal always safe → Greedy
