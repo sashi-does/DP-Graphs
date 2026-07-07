@@ -72,6 +72,4 @@ int main() {
     }
 	
 	cout << dp[items][size][size][size] << endl;
-	
-
 }
