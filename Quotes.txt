@@ -1,0 +1,14 @@
+"A year from now, you'll wish you had started today."
+
+
+Ask yourself these when you encounter that 
+
+1."Operation X can be done any number of times"
+What changes?
+What never changes?
+What is the invariant?
+
+2. When you encounter DP question
+idea: at every index try to know where that index/element get belongs to, try to know the stats of every element at every index at a particular call stack.
+What is the final state?
+Can I describe the final state directly?
