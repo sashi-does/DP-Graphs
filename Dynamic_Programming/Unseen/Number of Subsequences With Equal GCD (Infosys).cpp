@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/find-the-number-of-subsequences-with-equal-gcd/description/
+
 class Solution {
 public:
     int n;
