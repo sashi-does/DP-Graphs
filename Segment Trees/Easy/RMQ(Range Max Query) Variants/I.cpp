@@ -1,6 +1,6 @@
 /*
 Author: sashi-does
-date: 20 july, 2026
+date: 26 july, 2026
 
 "A year from now, you'll wish you had started today."
 */
@@ -8,7 +8,7 @@ date: 20 july, 2026
 //  RMQ Variant - 1
 // will be given q queries (each query[i] has a range {x, y})
 // q[i] = {x, y} 
-// have to find the max element to the right side of the range {x, y} i.e {y + 1, n - 1}
+// have to find the max element(index precisely) to the right side of the range {x, y} i.e {y + 1, n - 1}
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -24,17 +24,13 @@ private:
         int mid = l + (r - l) / 2;
         int leftMinIdx = getMaxIdx(l, mid, tl, tr, 2 * idx + 1);
         int rightMinIdx = getMaxIdx(mid + 1, r, tl, tr, 2 * idx + 2);
-        
+
         if(leftMinIdx == -1)
             return rightMinIdx;
         if(arr[leftMinIdx] > arr[rightMinIdx]) 
             return leftMinIdx;
         return rightMinIdx;
     }
-public:
-    int n;
-    vector<int> arr;
-    vector<int> seg;
     int buildTree(int l, int r, int idx) {
         if(l == r) {
             seg[idx] = l;
@@ -49,6 +45,10 @@ public:
             seg[idx] = rightMinIdx;
         return seg[idx];
     }
+public:
+    int n;
+    vector<int> arr;
+    vector<int> seg;
     SegmentTree(vector<int> &arr, int n) {
         this->n = n;
         this->arr = arr;

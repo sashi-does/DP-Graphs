@@ -7,6 +7,12 @@
 *.dll
 *.a
 
+# Competitive Programming Helper
+.cph/
+
+# Binary files
+*.bin
+
 # Debug files
 *.dSYM/
 *.stackdump
