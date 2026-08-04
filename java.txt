@@ -1,0 +1,147 @@
+1️⃣ What is Spring Framework?
+
+👉 A lightweight, open-source framework for building Java applications using IoC (Inversion of Control) and DI (Dependency Injection).
+👉 It reduces boilerplate code and promotes loose coupling.
+
+2️⃣ What is IoC (Inversion of Control)?
+
+👉 Instead of developers creating objects using new, the Spring container creates and manages objects.
+👉 This shifts control from application code to the framework.
+
+3️⃣ What is DI (Dependency Injection)?
+
+👉 Dependencies are injected by Spring rather than created manually.
+👉 Helps in loose coupling, easier testing, and better maintainability.
+
+4️⃣ Types of Dependency Injection?
+
+👉
+
+Constructor Injection → Recommended (immutable, testable)
+Setter Injection → Optional dependencies
+Field Injection → Not recommended (hard to test)
+5️⃣ What is a Bean?
+
+👉 Any object that is created, managed, and stored in the Spring container.
+👉 Beans are defined via XML, annotations, or Java config.
+
+6️⃣ What is ApplicationContext?
+
+👉 The central interface of Spring container that manages:
+
+Bean lifecycle
+Dependency injection
+Advanced features like AOP, events
+7️⃣ BeanFactory vs ApplicationContext?
+
+👉
+
+BeanFactory → Basic DI container (lazy loading)
+ApplicationContext → Advanced container (eager loading + extra features like AOP, i18n)
+8️⃣ What is @Component?
+
+👉 A generic stereotype annotation used to mark a class as a Spring Bean.
+👉 It is detected automatically via component scanning.
+
+🔥 STEREOTYPE ANNOTATIONS
+9️⃣ What is @Service?
+
+👉 Specialized version of @Component used in service layer.
+👉 Indicates business logic and improves code readability and design clarity.
+
+🔟 What is @Repository?
+
+👉 Used in DAO (data access layer).
+👉 Provides automatic exception translation (converts DB exceptions into Spring exceptions).
+
+1️⃣1️⃣ What is @Controller?
+
+👉 Used in Spring MVC to handle HTTP requests.
+👉 Returns views or responses to the client.
+
+1️⃣2️⃣ What is @Configuration?
+
+👉 Indicates a class contains bean definitions.
+👉 Works with @Bean methods to manually create and configure objects.
+
+1️⃣3️⃣ Difference: @Component vs @Service vs @Repository?
+
+👉 All are same internally (all create beans)
+👉 Difference is purpose & readability
+
+@Component → Generic
+@Service → Business logic
+@Repository → Database layer + exception handling
+1️⃣4️⃣ What is @Autowired?
+
+👉 Automatically injects dependency by type.
+👉 Removes need for manual object creation.
+
+1️⃣5️⃣ What is @Qualifier?
+
+👉 Used with @Autowired to resolve ambiguity when multiple beans of same type exist.
+
+1️⃣6️⃣ What is @Primary?
+
+👉 Marks one bean as default choice among multiple beans.
+
+1️⃣7️⃣ @Qualifier vs @Primary?
+
+👉
+
+@Primary → Default bean
+@Qualifier → Explicit selection
+👉 @Qualifier overrides @Primary
+1️⃣8️⃣ What is Component Scanning?
+
+👉 Spring scans specified packages to automatically detect classes annotated with @Component and its variants.
+
+🔥 CONFIGURATION STYLES
+1️⃣9️⃣ What is XML Configuration?
+
+👉 Traditional way of defining beans using <bean> tag in XML.
+👉 Mostly used in legacy applications.
+
+2️⃣0️⃣ What is Annotation-based Configuration?
+
+👉 Modern approach using annotations like:
+
+@Component
+@Autowired
+👉 Reduces XML and improves readability.
+2️⃣1️⃣ Can we mix XML and Annotation?
+
+👉 ✅ Yes, both can be used together.
+👉 Common in migration or legacy projects.
+
+👉 Example:
+
+XML defines infrastructure beans
+Annotations define service classes
+2️⃣2️⃣ What is @Bean?
+
+👉 Used inside @Configuration class to manually create beans.
+👉 Useful when you don’t want to use component scanning.
+
+2️⃣3️⃣ What is Spring Boot?
+
+👉 A framework built on top of Spring that:
+
+Removes configuration overhead
+Provides auto-configuration
+Uses embedded servers (Tomcat, Jetty)
+2️⃣4️⃣ What is @SpringBootApplication?
+
+👉 A shortcut annotation combining:
+
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+2️⃣5️⃣ What is Auto-Configuration?
+
+👉 Spring Boot automatically configures beans based on:
+
+Classpath dependencies
+Application properties
+
+👉 Example: Adding Spring Web dependency auto-configures Tomcat.
