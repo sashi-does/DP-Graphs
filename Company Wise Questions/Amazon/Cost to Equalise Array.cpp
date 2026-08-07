@@ -5,7 +5,7 @@ date: 1 august, 2026
 "A year from now, you'll wish you had started today."
 */
 
-// https://leetcode.com/discuss/post/8439839/google-swe-intern-interview-experience-r-vi40/
+// https://docs.google.com/document/d/1RPTRX6_jbEwgxrs2yIVaCo_oRLweF7sdlTRZWco0pvM/edit?tab=t.0
 
 
 
