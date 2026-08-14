@@ -35,6 +35,10 @@ input.txt
 output.txt
 test.txt
 
+# My Source
+./java.txt
+./demo.cpp
+
 # Logs
 *.log
 
