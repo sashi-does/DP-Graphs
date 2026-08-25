@@ -1,17 +1,19 @@
 /*
 Author: sashi-does
-date: 1 august, 2026
+date: 25 august, 2026
 
 "A year from now, you'll wish you had started today."
 */
 
-// https://leetcode.com/discuss/post/8439839/google-swe-intern-interview-experience-r-vi40/
-
+// https://docs.google.com/document/d/1vPiPTdy9CnO7PeXO6DDGz1zrEu4Con90gFnJCTbmuRA/edit?tab=t.0
 
 
 #include <bits/stdc++.h>
 using namespace std;
 typedef pair<int, int> T;
+
+static vector<int> dx = {-1, 1, 0, 0};
+static vector<int> dy = {0, 0, -1, 0};
 
 signed main() {
 
@@ -20,47 +22,52 @@ signed main() {
 
     while (t--) {
 
-        int n, e;
-        cin >> n >> e;
+        int m, n;
+        cin >> m >> n;
 
-        vector<vector<int>> adj(n);
-        vector<int> deg(n, 0);
+        vector<vector<int>> grid(m, vector<int>(n));
+        queue<T> q;
+        int dst = 0, src = 0;
 
-        for(int i = 0; i < e; i++) {
-            int u, v;
-            cin >> u >> v;
-            adj[u].push_back(v);
-            adj[v].push_back(u);
-            deg[u]++;
-            deg[v]++;
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                cin >> grid[i][j];
+                if(grid[i][j] == 'S') {
+                    src++;
+                    q.push({i, j});
+                }
+                else if(grid[i][j] == 'T')
+                    dst++;
+            }
         }
-       
+        
+        int clock = 0, time = 0;
+        vector<vector<bool>> visited(m, vector<int>(n, false));
 
-        queue<int> q;
-        for(int i = 0; i < n; i++) {
-            if(deg[i] < 2)
-                q.push(i);  
-        }
-
-        int clock = 0;
         while(!q.empty()) {
-            int sz = q.size();
-            for(int i = 0; i < sz; i++) {
-                int front = q.front();
-                q.pop();
-                for(int neigh : adj[front]) {
-                    if(deg[neigh] > 0)
-                        deg[neigh]--;
-                    if(deg[neigh] < 2 && deg[neigh] > 0) {
-                        q.push(neigh);
+            T front = q.front();
+            int cx = front.first, cy = front.second;
+            for(int i = 0; i < 4; i++) {
+                int x = cx + dx[i], y = cy + dy[i];
+                if(!isValid(x, y))
+                    continue;
+                if(visited[x][y])
+                    continue;
+                if(grid[x][y] == 'T') {
+                    dst--;
+                    if(dst == 0) {
+                        time = clock;
+                        break;
                     }
+                }
+                if(grid[x][y] != 'B') {
+                    q.push({x, y});
                 }
             }
             clock++;
         }
 
-        cout << clock << endl;
-
+        cout << time << endl;
 
     }
 
